@@ -46,3 +46,12 @@ def test_divide(a, b, expected):
     """
     result = utils.divide(a, b)
     assert result == expected
+
+
+@pytest.mark.parametrize("a, expected ", [(5, "101"), (0, "0"), (100, "1100100")])
+def test_convert_to_binary(a, expected):
+    """
+    Tests Binary conversion
+    """
+    result = utils.convert_to_binary(a)
+    assert result == expected
