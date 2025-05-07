@@ -29,3 +29,17 @@ def divide(a: int, b: int) -> float:
     Function that divides some numbers
     """
     return a / b
+
+def convert_to_binary(number) -> str:
+    if number < 0 or number > 100:
+        raise ValueError("Number must be between 0 and 100")
+    if not isinstance(number, int):
+        raise ValueError("Number must be an integer")
+    res = ''
+    n = number
+    if n == 0:
+        return '0'
+    while n > 0:
+        res = str(n % 2) + res
+        n = n // 2
+    return res
